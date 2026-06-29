@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane maxHeight="749.0" maxWidth="1102.0" minHeight="713.0" minWidth="1102.0" prefHeight="713.0" prefWidth="1102.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carnetDeVoyage.vues.VueCarnetDeVoyage">
+   <center>
+   </center>
+   <center>
+      <HBox fx:id="deuxPage" alignment="CENTER" maxHeight="700.0" maxWidth="1035.0" minHeight="700.0" minWidth="1035.0" prefHeight="700.0" prefWidth="1035.0" spacing="30.0" style="-fx-alignment: ;" styleClass="glass-grey" stylesheets="@../ressources/style/buttonStyle.css" BorderPane.alignment="CENTER">
+         <children>
+
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </center>
+</BorderPane>

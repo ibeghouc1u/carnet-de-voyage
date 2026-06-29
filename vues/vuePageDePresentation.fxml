@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="680.0" maxWidth="470.0" minHeight="680.0" minWidth="470.0" prefHeight="680.0" prefWidth="470.0" styleClass="page" stylesheets="@../ressources/style/page.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carnetDeVoyage.vues.VuePageDePresentation">
+
+   <HBox alignment="CENTER" prefHeight="92.0" prefWidth="689.0">
+         <TextField fx:id="titreDuLivre" alignment="CENTER" onKeyReleased="#miseAJouerTitreDuCarnet" prefHeight="46.0" prefWidth="294.0" styleClass="titre-page" stylesheets="@../ressources/style/page.css" text="Aucun Titre">
+         <font>
+            <Font name="Chilanka Regular" size="24.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="40.0" right="40.0" />
+         </VBox.margin>
+      </TextField>
+   </HBox>
+
+   <Separator prefHeight="22.0" prefWidth="545.0" />
+   <HBox alignment="CENTER" prefHeight="71.0" prefWidth="364.0" spacing="60.0" styleClass="auteur-box">
+      <VBox.margin>
+         <Insets left="60.0" right="60.0" />
+      </VBox.margin>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="37.0" prefWidth="199.0" styleClass="button-ajouter" text="Auteur" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Chilanka Regular" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="auteurDuLivre" alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" onKeyReleased="#miseAJouerAuteur" prefHeight="46.0" prefWidth="260.0" styleClass="titre-page" text="Aucun Auteur">
+         <font>
+            <Font name="Chilanka Regular" size="21.0" />
+         </font>
+      </TextField>
+   </HBox>
+   <Separator prefHeight="17.0" prefWidth="59.0">
+      <VBox.margin>
+         <Insets left="200.0" right="200.0" top="30.0" />
+      </VBox.margin>
+   </Separator>
+   <VBox alignment="CENTER" prefHeight="117.0" prefWidth="291.0" spacing="10.0">
+      <VBox.margin>
+         <Insets left="100.0" right="68.0" top="27.0" />
+      </VBox.margin>
+      <HBox alignment="CENTER" prefHeight="44.0" prefWidth="498.0" spacing="32.0" styleClass="titre-page">
+         <children>
+         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="76.0" styleClass="button-ajouter" text="Debut" textAlignment="CENTER" textFill="WHITE">
+            <font>
+               <Font name="Chilanka Regular" size="20.0" />
+            </font>
+         </Label>
+         <Label fx:id="dateDeDebut" alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#changerLaDateDeDebut" prefHeight="34.0" prefWidth="157.0" text="jj/mm/aaaa">
+            <font>
+               <Font name="Chilanka Regular" size="21.0" />
+            </font>
+         </Label>
+      </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="45.0" prefWidth="291.0" spacing="32.0" styleClass="titre-page">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="32.0" prefWidth="76.0" styleClass="button-ajouter" text="Fin" textAlignment="CENTER" textFill="WHITE">
+            <font>
+               <Font name="Chilanka Regular" size="20.0" />
+            </font>
+         </Label>
+         <Label fx:id="dateDeFin" alignment="CENTER" prefHeight="34.0" prefWidth="157.0" text="jj/mm/aaaa">
+            <font>
+               <Font name="Chilanka Regular" size="21.0" />
+            </font>
+         </Label>
+      </HBox>
+   </VBox>
+   <HBox alignment="CENTER" prefHeight="245.0" prefWidth="466.0" spacing="30.0">
+      <padding>
+         <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+      </padding>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="39.0" prefWidth="165.0" styleClass="button-ajouter" text="Paricipant" textFill="WHITE">
+         <font>
+            <Font name="Chilanka Regular" size="21.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="participants" onKeyReleased="#miseAJouerPaticipants" prefHeight="226.0" prefWidth="184.0" text="aucun Particiant">
+         <font>
+            <Font name="Chilanka Regular" size="17.0" />
+         </font></TextArea>
+   </HBox>
+
+</VBox>

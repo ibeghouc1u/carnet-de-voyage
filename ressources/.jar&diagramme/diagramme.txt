@@ -1,0 +1,225 @@
+@startuml
+
+skinparam class {
+   BackgroundColor<<java>> Wheat
+   BorderColor<<java>> Tomato
+}
+
+interface controleurs.Observateur {
+    {abstract} void reagir()
+}
+
+class controleurs.TextField<<java>>
+class controleurs.ListView<<java>>
+class controleurs.MenuItem<<java>>
+class carnet.String<<java>>
+class carnet.Date<<java>>
+
+class controleurs.ControleurPageDePresentation {
+    
+    + ControleurPageDePresentation(carnet: CarnetDeVoyage, page: Page)
+    + initialize(): void
+    + reagir(): void
+}
+
+class controleurs.ControleurMenu{
+   
+    + ControleurMenu(carnet: CarnetDeVoyage)
+    + reagir(): void
+    + changerLaDateDeDebutDeVoyage(): void
+    + nouveauCarnet(): void
+    + supprimer(): void
+    + ajouterUnePage(): void
+    + sauvegarde(): void
+    + initialize(): void
+}
+
+class controleurs.ControleurCarnetDeVoyage {
+   
+    + ControleurCarnetDeVoyage(canet: CarnetDeVoyage)
+    + reagir(): void
+}
+
+class controleurs.ControleurOutils {
+   
+    + ControleurOutils(canet: CarnetDeVoyage)
+    + reagir(): void
+    + ajouterUnePage(): void
+    + sauvegarder(): void
+    + open(): void
+    + initialize(location: URL, resources: ResourceBundle): void
+}
+
+class controleurs.ControleurListePages {
+  
+    + ControleurListePages(carnet: CarnetDeVoyage)
+    + reagir(): void
+    + initialize(location: URL, resources: ResourceBundle): void
+    + selectionerUnePage(): void
+}
+
+class controleurs.ControleurPageDuJour {
+   
+    + ControleurPageDuJour(canet: CarnetDeVoyage, page: Page)
+    + initialize(): void
+    + miseAJourTitreDeLaPage(): void
+    + miseAJourTextDuJour(): void
+    + ajouterUneImage(): void
+    + supprimerUneImage(): void
+    + reagir(): void
+}
+
+class controleurs.ControleurPage {
+  
+    + ControleurPage(carnet: CarnetDeVoyage, page: Page)
+    +reagir(): void 
+}
+
+class controleurs.ControleurChangerPage{
+
+  +ControleurChangerPage(CarnetDeVoyage: canet)
+  +reagir(): void
+  +passerALaPageSuivante( ) : void
+  +retourALaPagePrecedante() : void
+  +initialize(): void
+  +supprimerPage(): void
+}
+
+
+    class controleurs.ControleurMap {
+      
+        + ControleurMap(CarnetDeVoyage carnet, Page page)
+        + initialize(URL location, ResourceBundle resources)
+        + reagir()
+        + quitterlaMap()
+    }
+
+class carnet.SujetObserve {
++ void ajouterObservateur(Observateur)
++ void notifierObservateur()
+}
+
+class carnet.CarnetDeVoyage {
+    - numPageActuel: int
+    - TitreDesPage: LinkedList<String>
+    + CarnetDeVoyage()
+    + ajouter(int nbrpage): void
+    + ajouter(): void
+    + ajouter(Page page): void
+    + getLaPageDePresenation(): Page
+    + iterator(): Iterator<Page>
+    + getNumPageActuel(): int
+    + setNumPageActuel(int numPageActuel): void
+    + changerDePage(int delta): void
+    + supprimerTouteLesPages(): void
+    + toString(): String
+    + ajouterUneNouvelleImage(Page page,String nouveauPath): void
+    + supprimerUneImage(Page page): void
+    + getTitreDesPage(): LinkedList<String>
+    + changerLeTitreDeLaPage(Page page, String titre): void
+    + selectionerUnePage(int numPage): void
+    + nouveauCarnet(): void
+    + getPagesDuCarnet(): ArrayList<Page>
+    + setPagesDuCarnet(ArrayList<Page> pagesDuCarnet): void
+    + supprimerPage(): void
+    + supprimerLesImageSelectionnerLaPage(Page page,int i): void
+}
+
+class carnet.PagePresentation {
+    - auteur: String
+    - participant: String
+    + PageDePresentation()
+    + getAuteur(): String
+    + setAuteur(String auteur): void
+    + getDebutDuVoyage(): Date
+    + setDebutDuVoyage(Date debutDuVoyage): void
+    + getFinDuVoyage(): Date
+    + setFinDuVoyage(Date finDuVoyage): void
+    + getParticipant(): String
+    + setParticipant(String participant): void
+    + estUnePageDePresentation(): boolean
+    + toString(): String
+}
+
+abstract class carnet.Page {
+  - titre: String
+    - numeroDePage: int
+    + Page()
+    + getTitre(): String
+    + setTitre(String titre): void
+    + estUnePageDePresentation(): boolean
+    + estUnePageDuJour(): boolean
+    + getDebutDuVoyage(): Date
+    + setDebutDuVoyage(Date debutDuVoyage): void
+    + getFinDuVoyage(): Date
+    + setFinDuVoyage(Date finDuVoyage): void
+    + getAuteur(): String
+    + setAuteur(String auteur): void
+    + getNumeroDePage(): int
+    + getParticipant(): String
+    + setParticipant(String participant): void
+    + getTextDuJour(): String
+    + setTextDuJour(String textDuJour): void
+    + getPathImage(): String
+    + setPathImage(String pathImage): void
+    + getLocalisation(): String
+    + setLocalisation(String localisation): void
+    + toString(): String
+    + setNumeroDePage(int numeroDePage): void
+}
+
+class carnet.PageDuJour {
+    - textDuJour: String
+    - pathImage: String
+    - localisation: String
+    - estLocaliser: boolean
+    + PageDuJour()
+    + getTextDuJour(): String
+    + setTextDuJour(String textDuJour): void
+    + getPathImage(): String
+    + setPathImage(String pathImage): void
+    + getLocalisation(): String
+    + setLocalisation(String localisation): void
+    + estUnePageDuJour(): boolean
+    + toString(): String
+}
+
+enum outils.FabriqueDate {
+}
+enum outils.FabriqueNumeroDePage{
+}
+
+
+controleurs.Observateur <|.. controleurs.ControleurCarnetDeVoyage
+controleurs.Observateur <|.. controleurs.ControleurOutils 
+controleurs.Observateur <|.. controleurs.ControleurPage
+controleurs.Observateur <|.. controleurs.ControleurMenu
+controleurs.Observateur <|.. controleurs.ControleurListePages
+controleurs.Observateur <|.. controleurs.ControleurChangerPage
+carnet.SujetObserve <|-- carnet.CarnetDeVoyage
+carnet.Page <|-- carnet.PagePresentation
+carnet.Page <|-- carnet.PageDuJour
+controleurs.ControleurPage <|-- controleurs.ControleurPageDePresentation
+controleurs.ControleurPage <|-- controleurs.ControleurPageDuJour
+carnet.CarnetDeVoyage -- "*" carnet.Page
+carnet.CarnetDeVoyage -- "*" carnet.String
+carnet.SujetObserve -- "*" controleurs.Observateur
+carnet.PagePresentation --"2"  carnet.Date
+controleurs.ControleurPageDePresentation --"2" controleurs.TextField
+controleurs.ControleurPageDePresentation --"1"controleurs.TextArea
+controleurs.ControleurPageDuJour --"1" controleurs.TextField
+controleurs.ControleurPageDuJour --"1" controleurs.TextArea
+controleurs.ControleurPage -- "1" carnet.CarnetDeVoyage
+controleurs.ControleurPage -- "1" carnet.Page
+controleurs.ControleurOutils -- "1" carnet.CarnetDeVoyage
+controleurs.ControleurChangerPage -- "1" carnet.CarnetDeVoyage
+controleurs.ControleurCarnetDeVoyage -- "1" carnet.CarnetDeVoyage
+controleurs.ControleurMenu -- "1" carnet.CarnetDeVoyage
+controleurs.ControleurListePages -- "1" carnet.CarnetDeVoyage
+controleurs.ControleurListePages --"1" controleurs.ListView
+controleurs.ControleurMenu .. "*" controleurs.MenuItem
+controleurs.ControleurChangerPage --"1" controleurs.TextField
+controleurs.ControleurMap --> carnet.CarnetDeVoyage
+controleurs.ControleurMap --> carnet.Page
+controleurs.ControleurMap ..|> controleurs.Observateur
+@enduml

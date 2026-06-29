@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbox" maxHeight="680.0" maxWidth="470.0" minHeight="680.0" minWidth="470.0" prefHeight="680.0" prefWidth="470.0" styleClass="page" stylesheets="@../ressources/style/page.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carnetDeVoyage.vues.VuePageDuJour">
+   <children>
+      <HBox alignment="CENTER" prefHeight="92.0" prefWidth="689.0">
+         <TextField fx:id="titreDeLaPage" alignment="CENTER" onKeyReleased="#miseAJourTitreDeLaPage" prefHeight="46.0" prefWidth="294.0" styleClass="titre-page" stylesheets="@../ressources/style/page.css" text="Aucun Titre">
+            <font>
+               <Font name="Chilanka Regular" size="24.0" />
+            </font>
+            <VBox.margin>
+               <Insets left="40.0" right="40.0" />
+            </VBox.margin>
+         </TextField>
+      </HBox>
+      <Separator prefHeight="7.0" prefWidth="638.0" />
+      <HBox fx:id="infoPage" alignment="CENTER" prefHeight="535.0" prefWidth="490.0" spacing="10.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="535.0" prefWidth="218.0">
+               <children>
+                  <TextArea fx:id="textDuJour" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" onKeyReleased="#miseAJourTextDuJour" pickOnBounds="false" prefHeight="404.0" prefWidth="184.0" styleClass="text-area" stylesheets="@../ressources/style/page.css" wrapText="true">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Chilanka Regular" size="15.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextArea>
+               </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="535.0" prefWidth="237.0" spacing="30.0" stylesheets="@../ressources/style/page.css">
+               <children>
+                  <TextField alignment="CENTER" prefHeight="49.0" prefWidth="165.0" styleClass="titre-Box" text="Localisation">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Chilanka Regular" size="18.0" />
+                     </font>
+                  </TextField>
+                  <HBox alignment="CENTER" maxHeight="276.0" maxWidth="219.0" minHeight="276.0" minWidth="219.0" prefHeight="276.0" prefWidth="219.0">
+                     <children>
+                        <ImageView fx:id="image" fitHeight="247.0" fitWidth="225.0" onDragDropped="#drop" onDragOver="#dragOver" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="237.0" spacing="15.0">
+                     <children>
+                        <Button fx:id="bouttonAjouterImage" alignment="CENTER" mnemonicParsing="false" onAction="#ajouterUneImage" style="-fx-background-color: #f2dfa1;">
+                           <tooltip>
+                              <Tooltip fx:id="tooltip1" text="Ajouter l'image du jour" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/image/addImage.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="OPEN_HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor></Button>
+                        <Button fx:id="bouttonSupprimerImage" mnemonicParsing="false" onAction="#supprimerUneImage" prefHeight="36.0" prefWidth="31.0" style="-fx-background-color: #f2dfa1;">
+                           <tooltip>
+                              <Tooltip fx:id="tooltip2" text="Supprimer l'image du jour" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/image/removeImage.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="OPEN_HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor></Button>
+                        <Button fx:id="buttonLocalisation" mnemonicParsing="false" onAction="#localisationDeLImage" onDragDetected="#localisationDeLImage" prefHeight="38.0" prefWidth="36.0" style="-fx-background-color: #f2dfa1;">
+                           <tooltip>
+                              <Tooltip fx:id="tooltip3" text="Localiser La journée" />
+                           </tooltip>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/image/localisation.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="OPEN_HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor></Button>
+                        <Button fx:id="buttonAjouterPlusieurPage" mnemonicParsing="false" onAction="#listeDesImages" style="-fx-background-color: #f2dfa1;">
+                           <tooltip>
+                              <Tooltip fx:id="tooltip4" text="Ajouter plus d'image " />
+                           </tooltip>
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../ressources/image/addMoreImage.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="OPEN_HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor></Button>
+                     </children>
+                  </HBox>
+
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="466.0" spacing="64.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <children>
+            <Label fx:id="numDePage" alignment="CENTER" prefHeight="28.0" prefWidth="47.0" text="1" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="titre-Box" />
+                  <String fx:value="button-ajouter" />
+               </styleClass>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateDeLaPage" alignment="CENTER" prefHeight="28.0" prefWidth="146.0" text="jj/mm/aaaa" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="Chilanka Regular" size="19.0" />
+               </font>
+               <padding>
+                  <Insets left="-23.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -1,0 +1,44 @@
+.titre-page{
+    -fx-background-color: #f8e9c0;
+    -fx-background-radius: 100;
+}
+.titre-Box{
+    -fx-background-color: #f8e9c0;
+    -fx-background-radius: 100;
+}
+.page{
+    -fx-background-color: #f2dfa1;
+    -fx-background-radius: 20;
+    -fx-border-color: #9a8e69;
+    -fx-border-radius: 20;
+    -fx-border-width: 2;
+}
+
+.button-ajouter{
+    -fx-background-color: #828282;
+    -fx-background-radius: 30;
+}
+
+.auteur-box{
+    -fx-background-color: #f2dfa1;
+    -fx-background-radius: 100;
+}
+
+.transparent{
+        -fx-background-color: #f2dfa1;
+}
+
+.text-area {
+    -fx-font-family: Chilanka;
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-text-fill: Black;
+    -fx-display-caret:true;
+
+}
+
+.text-area .content {
+    -fx-background-color: #f8e9c0;
+}
+
+

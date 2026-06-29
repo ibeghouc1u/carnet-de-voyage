@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="barOutils" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="632.0" prefWidth="140.0" spacing="50.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carnetDeVoyage.vues.VueOutils">
+   <children>
+      <Button fx:id="ajouterPage" mnemonicParsing="false" onAction="#ajouterUnePage" prefHeight="73.0" prefWidth="103.0" styleClass="bevel-grey" stylesheets="@../ressources/style/buttonStyle.css">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <tooltip>
+            <Tooltip fx:id="tooltip1" text="Ajouter Une Nouvelle Page" wrapText="true" />
+         </tooltip>
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true" styleClass="bevel-grey">
+               <image>
+                  <Image url="@../ressources/image/ajouterPage.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button fx:id="save" mnemonicParsing="false" onAction="#sauvegarder" prefHeight="73.0" prefWidth="103.0" styleClass="bevel-grey" stylesheets="@../ressources/style/buttonStyle.css">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <tooltip>
+            <Tooltip id="tooltip2" fx:id="tooltip2" text="Enregister le Carnet de Voyage " />
+         </tooltip>
+         <graphic>
+            <ImageView fitHeight="64.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true" styleClass="bevel-grey">
+               <image>
+                  <Image url="@../ressources/image/saveFile.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button mnemonicParsing="false" onAction="#open" prefHeight="73.0" prefWidth="103.0" styleClass="bevel-grey" stylesheets="@../ressources/style/buttonStyle.css">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <tooltip>
+            <Tooltip fx:id="tooltip3" graphicTextGap="1.0" text="Ouvrir un Carnet de Voyage" />
+         </tooltip>
+         <graphic>
+            <ImageView fitHeight="60.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/image/openFolder.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+   </children>
+</VBox>

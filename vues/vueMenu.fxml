@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+
+<MenuBar xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carnetDeVoyage.vues.VueMenu">
+  <menus>
+    <Menu mnemonicParsing="false" text="Fichier">
+      <items>
+            <MenuItem mnemonicParsing="false" onAction="#nouveauCarnet" text="Nouveau Carnet" />
+            <MenuItem mnemonicParsing="false" onAction="#open" text="Ouvrir" />
+            <MenuItem fx:id="save" mnemonicParsing="false" onAction="#sauvegarde" text="Sauvegarder" />
+            <MenuItem mnemonicParsing="false" text="Quitter" />
+      </items>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Edition">
+      <items>
+        <MenuItem mnemonicParsing="false" onAction="#ajouterUnePage" text="Ajouter une page" />
+            <MenuItem fx:id="changerDate" mnemonicParsing="false" onAction="#changerLaDateDeDebutDeVoyage" text="Changer la date de debut du voyage" />
+            <MenuItem fx:id="supprimerADroite" mnemonicParsing="false" onAction="#supprimerADroite" text="supprimer la page a droite" />
+            <MenuItem fx:id="supprimerAGauche" mnemonicParsing="false" onAction="#supprimerAGauche" text="supprimer la page a gauche" />
+      </items>
+    </Menu>
+    <Menu mnemonicParsing="false" text="Aide">
+      <items>
+        <MenuItem mnemonicParsing="false" text="About" />
+      </items>
+    </Menu>
+  </menus>
+</MenuBar>

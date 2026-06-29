@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox alignment="CENTER" maxHeight="400.0" maxWidth="464.0" minHeight="371.0" minWidth="417.0" prefHeight="371.0" prefWidth="417.0" style="-fx-background-color: #f2dfa1;" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carnetDeVoyage.vues.CelluleLIsteImage">
+   <children>
+      <ImageView fx:id="image" fitHeight="362.0" fitWidth="382.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../ressources/simuler.png" />
+         </image>
+      </ImageView>
+   </children>
+</HBox>

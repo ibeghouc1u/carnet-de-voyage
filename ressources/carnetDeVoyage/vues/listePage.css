@@ -1,0 +1,10 @@
+.list-view .list-cell:selected:focused {
+    -fx-background-color: #22dEa1;
+    -fx-text-fill: Black;
+    -fx-font-weight: bold;
+}
+.list-view .list-cell {
+    -fx-background-color: #f2dfa1;
+    -fx-text-fill: Black;
+    -fx-font-weight: bold;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxHeight="628.0" maxWidth="175.0" minHeight="619.0" minWidth="130.0" prefHeight="628.0" prefWidth="175.0" style="-fx-border-radius: 10;" stylesheets="@../ressources/style/buttonStyle.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="carnetDeVoyage.vues.VueListePages">
+   <children>
+      <VBox alignment="CENTER_LEFT" maxHeight="615.0" maxWidth="149.0" minHeight="600.0" minWidth="121.0" prefHeight="600.0" prefWidth="128.0" styleClass="glass-grey">
+         <children>
+            <ListView fx:id="liste" maxHeight="594.0" maxWidth="196.0" minHeight="509.0" onMouseClicked="#selectionerUnePage" prefHeight="525.0" prefWidth="149.0" stylesheets="@../ressources/style/listePage.css" />
+         </children>
+      </VBox>
+   </children>
+</VBox>
