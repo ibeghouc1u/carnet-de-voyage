@@ -53,26 +53,4 @@ src/
 * JavaFX SDK
 * JSON Simple library
 
-## Run the Application
 
-After configuring JavaFX and dependencies:
-
-```bash
-java --module-path /path/to/javafx/lib --add-modules javafx.controls,javafx.fxml -jar TravelJournal.jar
-```
-
-## Future Improvements
-
-* Interactive map integration
-* PDF export
-* Cloud synchronization
-* Multiple journals management
-* Advanced image gallery
-
-## Author
-
-Personal academic project developed in Java and JavaFX to practice software design, GUI development, and data persistence.
-
-## License
-
-Educational project.
